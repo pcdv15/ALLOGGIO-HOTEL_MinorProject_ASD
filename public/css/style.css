@@ -1,0 +1,54 @@
+.twelve.columns{ 
+	background-color:rgb(239,228,176);
+}
+
+.button{
+	background-color:white;
+}
+a:hover{
+		font-size:12px;
+}
+
+.cont{
+	margin-top:5%;
+}
+
+.margin_button{
+	margin-left:1%;
+	margin-bottom:1%;
+	margin-top:1%;
+}
+
+.sign{
+	margin-left:35%;
+}
+
+.logo_home{
+	margin-top:3%;
+	text-align:center;
+}
+
+.reg_form{
+	margin-left:10px;
+	margin-top:3%;
+	width:200%;
+	text-align:center;
+	border:2px solid rgb(239,228,176);
+}
+
+.dob{
+	width:9%;
+}
+
+.space{
+	margin-top:2%;
+}
+
+h3{
+	text-decoration:underline;
+	text-align:center;
+}
+
+.room1{
+	text-align:center;
+}
