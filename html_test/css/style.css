@@ -1,0 +1,41 @@
+.twelve.columns{ 
+	background-color:rgb(239,228,176);
+}
+
+.menu_button{
+	background-color:white;
+}
+
+.cont{
+	margin-top:5%;
+}
+
+.margin_button{
+	margin-left:1%;
+	margin-bottom:1%;
+	margin-top:1%;
+}
+
+.sign{
+	margin-left:35%;
+}
+
+.logo_home{
+	background-color:black;
+	margin-top:3%;
+}
+
+.reg_form{
+	margin-top:10%;
+	width:200%;
+	text-align:center;
+	border:2px solid rgb(239,228,176);
+}
+
+.dob{
+	width:9%;
+}
+
+.space{
+	margin-top:2%;
+}
