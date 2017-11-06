@@ -1,36 +1,3 @@
-<?php
-    require_once("../include/conn.php");
-    session_start();
-    //sample input for login data
-    //Username: test
-    //Password: 1234
-
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent within form
-
-      $myusername = mysqli_real_escape_string($connection,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($connection,$_POST['password']);
-
-      $query  = "SELECT * ";
-      $query .= "FROM login ";
-      $query .= "WHERE username = '$myusername' and password = '$mypassword'";
-
-      $result = mysqli_query($connection, $query);
-      $login = mysqli_fetch_assoc($result);
-      
-      $count = mysqli_num_rows($result); //query above must result 1 row
-
-      echo $count;
-
-      if($count == 1) {
-        $_SESSION['logined_user'] = $myusername;
-        header("Location: test.php");
-      }else {
-        $error = "Your login credentials are invalid";
-      }
-
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Alloggio</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -46,7 +13,9 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -65,32 +34,28 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
-			<div class="cont">
-				<div class="twelve columns">
+		<div class="cont">
+			<div class="twelve columns">
 				<a class="button margin_button" href="index.html">Alloggio</a>
 				<a class="button" href="#">About</a>
 				<a class="button" href="#">Contact</a>
-				</div>
+				<a class="button sign" href="login.php">Sign In</a>
+				<a class="button" href="register.html">Sign Up</a>
 			</div>
-				<div class="twelve columns reg_form">
-					<form action="" method="post">
-							<p><img src="images/Alloggio_logo.png"></p>
-							<h3>Sign In</h3>
-							<p>Username:</p>
-							<input type="text" name="username" required>
-							<p>Password:</p>
-							<input type="password" name="password" required>
-							<br /><br />
-							<input type="submit" value="submit" name="submit">
-					</form>
-				</div>
+		</div>
+		<div class="logo_home">
+				<img src="images/Alloggio_logo.png">
+		</div>
+		<div class="slide_show">
+		</div>
+		<div class="rooms_info">
+			<h3>Our Rooms</h3>
+			<img src="images/standard.jpg" width="200" height="150" class="room1">
+			<img src="images/deluxe.jpg" width="200" height="150" class="rooms">
+			<img src="images/suite.jpg" width="200" height="150">
+		</div>
 	</div>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
-<?php 
-  
-    // 5. Close database connection
-    mysqli_close($connection);
-?>

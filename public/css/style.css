@@ -1,3 +1,12 @@
+@font-face {
+	font-family: raleway;
+	src: url('..font/raleway.woff2') format('woff2');
+}
+
+body {
+	font-family: raleway;
+}
+
 .twelve.columns{ 
 	background-color:rgb(239,228,176);
 }
@@ -45,8 +54,9 @@ a:hover{
 }
 
 h3{
-	text-decoration:underline;
+	font-weight: bold;
 	text-align:center;
+	font-family: raleway;
 }
 
 .room1{
