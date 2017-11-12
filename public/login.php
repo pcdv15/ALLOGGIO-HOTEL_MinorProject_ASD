@@ -2,7 +2,7 @@
     require_once("../include/conn.php");
     session_start();
     //sample input for login data
-    //Username: test
+    //Username: pcdv15
     //Password: 1234
     $error = "";
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,16 +12,22 @@
 
       $query  = "SELECT * ";
       $query .= "FROM login ";
-      $query .= "WHERE username = '$myusername' and password = '$mypassword'";
+      $query .= "WHERE username = '$myusername'";
 
       $result = mysqli_query($connection, $query);
       $login = mysqli_fetch_assoc($result);
+
+      $hashed_password = $login['password'];
       
       $count = mysqli_num_rows($result); //query above must result 1 row
 
       if($count == 1) {
-        $_SESSION['logined_user'] = $myusername;
-        header("Location: test.php");
+        if(password_verify($mypassword, $hashed_password)) { //Verify password if it's equal to the hashed password in db
+          $_SESSION['logined_user'] = $myusername;
+          header("Location: test.php");
+        } else {
+          $error = "Your login credentials are invalid";
+        }
         
       }else {
         $error = "Your login credentials are invalid";
@@ -33,6 +39,7 @@
 <html lang="en">
 <head>
   <?php
+    //echo ;
     $message = $error; 
   ?>
   <!-- Basic Page Needs
