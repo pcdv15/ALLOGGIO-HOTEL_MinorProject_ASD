@@ -14,6 +14,12 @@ Group Members
 
 + Fritz Xhyro Getigan
 
+-----
+Functions
+- update reservation
+- make new reservation
+- input personal info
+
 
 
 
