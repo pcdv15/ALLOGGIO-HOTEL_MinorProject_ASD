@@ -13,10 +13,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
@@ -35,9 +31,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
 			<div class="cont">
-				<div class="twelve columns">
-				<a class="button margin_button" href="index.html">Alloggio</a>
-				<a class="button" href="#">About</a>
+				<div class="twelve columns menu_bar">
+				<a class="button margin_button" href="index.php">Alloggio</a>
 				<a class="button" href="#">Contact</a>
 				</div>
 			</div>
@@ -45,15 +40,19 @@
 					<form>
 							<img src="images/Alloggio_logo.png">
 							<h3>Sign Up</h3>
-							<p class="space">First Name:</p>
-							<input type="text" name="fn" required>
-							<p>Last name:</p>
-							<input type="text" name="ln" required>
-							<p>Username:</p>
-							<input type="text" name="un" required>
-							<p>Password:</p>
-							<input type="password" name="pw" required>
-							<p>Date of Birth:</p>
+							<label class="space">First Name:</label>
+							<input type="text" name="firstname" required>
+							<label class="space">Last name:</label>
+							<input type="text" name="lastname" required>
+							<label class="space">Address:</label>
+							<input type="text" name="address" required>
+							<label class="space">Email:</label>
+							<input type="text" name="email" required>
+							<label class="space">Username:</label>
+							<input type="text" name="username" required>
+							<label class="space">Password:</label>
+							<input type="password" name="password" required>
+							<label class="space">Date of Birth:</label>
 							<input type="text" placeholder="YYYY" name="dob_year" class="dob" required>
 							<input type="text" placeholder="MM" name="dob_month" class="dob" required>
 							<input type="text" placeholder="DD" name="dob_day" class="dob" required> 

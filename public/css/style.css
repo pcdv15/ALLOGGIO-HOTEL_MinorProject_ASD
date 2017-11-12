@@ -1,21 +1,17 @@
-@font-face {
-	font-family: raleway;
-	src: url('..font/raleway.woff2') format('woff2');
+@font-face{
+	font-family:raleway;
+	src: url('../font/raleway.woff2') format('woff2');
 }
-
-body {
-	font-family: raleway;
-}
-
 .twelve.columns{ 
+	border:3px solid rgb(239,228,176);
+}
+
+.menu_bar{
 	background-color:rgb(239,228,176);
 }
 
 .button{
 	background-color:white;
-}
-a:hover{
-		font-size:12px;
 }
 
 .cont{
@@ -29,7 +25,11 @@ a:hover{
 }
 
 .sign{
-	margin-left:35%;
+	margin-left:47%;
+}
+
+.sign2{
+	margin-left:70%;
 }
 
 .logo_home{
@@ -54,11 +54,108 @@ a:hover{
 }
 
 h3{
-	font-weight: bold;
+	font-weight:bold;
 	text-align:center;
-	font-family: raleway;
+}
+
+h4{
+	font-weight:bold;
 }
 
 .room1{
 	text-align:center;
+}
+
+.standard{
+margin-left:12%;
+}
+
+.deluxe{
+margin-left:7%;
+}
+
+.suite{
+margin-left:7%;
+}
+
+.room_label{
+	margin-left:17%;
+}
+
+.img_center{
+	position:relative;
+	left:13%;
+}
+
+.checkin{
+	width:19%;
+}
+
+.year{
+	width:23%;
+}
+
+.more_image{
+	margin-left:170%;
+	margin-top:-500px;
+}
+
+.more_image2{
+	margin-left:170%;
+	margin-top:-430px;
+}
+
+.more_image3{
+	margin-left:170%;
+	margin-top:-420px;
+}
+
+.more_image4{
+	margin-left:170%;
+	margin-top:-470px;
+}
+
+.next_button{
+	margin-left:130%;
+}
+
+.move{
+	margin-left:100px;
+}
+
+.move2{
+	margin-left:50px;
+}
+
+.move3{
+	margin-left:100px;
+}
+
+#standard{
+	position:absolute;
+}
+
+#deluxe{
+	position:absolute;
+	top:190%;
+}
+
+#suite{
+	position:absolute;
+	top:280%;
+}
+.sdr{
+	position:abosulte;
+}
+
+.dr{
+	position:absolute;
+	left:45%;
+	margin-top:-49px;
+}
+
+.sr{
+	position:absolute;
+	left:74%;
+	margin-top:-49px;
 }

@@ -4,10 +4,9 @@
     //sample input for login data
     //Username: test
     //Password: 1234
-
+    $error = "";
     if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent within form
-
       $myusername = mysqli_real_escape_string($connection,$_POST['username']);
       $mypassword = mysqli_real_escape_string($connection,$_POST['password']);
 
@@ -20,11 +19,10 @@
       
       $count = mysqli_num_rows($result); //query above must result 1 row
 
-      echo $count;
-
       if($count == 1) {
         $_SESSION['logined_user'] = $myusername;
         header("Location: test.php");
+        
       }else {
         $error = "Your login credentials are invalid";
       }
@@ -34,7 +32,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <?php
+    $message = $error; 
+  ?>
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -67,14 +67,15 @@
 	<div class="container">
 			<div class="cont">
 				<div class="twelve columns">
-				<a class="button margin_button" href="index.html">Alloggio</a>
+				<a class="button margin_button" href="index.php">Alloggio</a>
 				<a class="button" href="#">About</a>
 				<a class="button" href="#">Contact</a>
 				</div>
 			</div>
 				<div class="twelve columns reg_form">
 					<form action="" method="post">
-							<p><img src="images/Alloggio_logo.png"></p>
+              <p><img src="images/Alloggio_logo.png"></p>
+              <p style="color:red;"><?php echo $message; ?></p>
 							<h3>Sign In</h3>
 							<p>Username:</p>
 							<input type="text" name="username" required>
@@ -82,7 +83,7 @@
 							<input type="password" name="password" required>
 							<br /><br />
 							<input type="submit" value="submit" name="submit">
-					</form>
+          </form>
 				</div>
 	</div>
 <!-- End Document
