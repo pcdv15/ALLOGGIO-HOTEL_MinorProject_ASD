@@ -7,6 +7,7 @@
   <title>Rooms</title>
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta http-equiv="refresh" content="5">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -147,7 +148,7 @@
                 <span style="color:#32cd32;">Green</span>: Available <br>
                 <span style="color:red;">Red</span>: Not Available
             </p>
-            <p><h5>SUITES</h5></p>
+            <p><h5>SUITE</h5></p>
             <p><span style="border: 2px solid <?php echo $r1 ?>;">Room 301</span> <span style="border: 2px solid <?php echo $r2 ?>;">Room 302</span> <span style="border: 2px solid <?php echo $r3 ?>;">Room 303</span></p> <br>
             <p><h5>DELUXE</h5></p>
             <p><span style="border: 2px solid <?php echo $r4 ?>;">Room 201</span> <span style="border: 2px solid <?php echo $r5 ?>;">Room 202</span> <span style="border: 2px solid <?php echo $r6 ?>;">Room 203</span> <span style="border: 2px solid <?php echo $r7 ?>;">Room 204</span> <span style="border: 2px solid <?php echo $r8 ?>;">Room 205</span></p> <br>

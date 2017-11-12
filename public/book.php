@@ -26,6 +26,8 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/Alloggio_icon.png">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
 
 </head>
 <body>
@@ -52,8 +54,59 @@
 //require("../include/header1.html");
 
 ?>
+<form method="post" action="">
+<p>
+    <h5>Room Type</h5>
+<select name="roomtype" required>
+    <option value="">--- Select Room Type ---</option>
+  <option value="VIP">Suite</option>
+  <option value="DELUXE">Deluxe</option>
+  <option value="STANDARD">Standard</option>
+</select>
+</p>
 
-<a class="button margin_button" href="book.php">Reserve Room</a>
+<p>
+    <h5>Room Number</h5>
+<select name="roomnum" required>
 
+</select>
+</p>
+
+<div class=" u-cf">
+    <label>Check In</label>
+	<input type="text" placeholder="MM" name="checkin_month" class="checkin" required>
+	<input type="text" placeholder="DD" name="checkin_day" class="checkin" required>
+	<input type="text" placeholder="YYYY" name="checkin_year" class="checkin year" required> 
+	<label>Check Out</label>
+	<input type="text" placeholder="MM" name="checkout_month" class="checkin" required>
+	<input type="text" placeholder="DD" name="checkout_day" class="checkin" required>
+	<input type="text" placeholder="YYYY" name="checkout_year" class="checkin year" required>
+</div>
+<br>
+
+<input type="submit" name="submit" value="Next"/>
+</form>
+
+<script>
+    $( "select[name='roomtype']" ).change(function () {
+        var room_type = $(this).val();
+
+        if(room_type) {
+            $.ajax({
+                url: "ajax.php",
+                dataType: 'Json',
+                data: {'type':room_type},
+                success: function(data) {
+                    $('select[name="roomnum"]').empty();
+                    $.each(data, function(key, value) {
+                        $('select[name="roomnum"]').append('<option value="'+ key +'">'+ value + '</option>');
+                    });
+                }
+            });
+        }else{
+            $('select[name="roomnum"').empty();
+        }
+    });
+</script>
 </body>
 </html>
