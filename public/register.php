@@ -1,6 +1,7 @@
 <?php
 	require("../include/conn.php");
 	$error = "";
+	$success_message = "";
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$firstname = $_POST["firstname"];
 		$lastname = $_POST["lastname"];
@@ -44,7 +45,6 @@
 
 				if($query_4) {
 					$success_message = "Registration successful!";
-					echo $success_message;
 				} else {
 					echo "Registration failed!";
 				}
@@ -57,7 +57,8 @@
 <head>
 <?php
     //echo ;
-    $message = $error; 
+	$message = $error; 
+	$success = $success_message;
   ?>
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -97,6 +98,8 @@
 					<form method="post" action="">
 							<img src="images/Alloggio_logo.png">
 							<h3>Sign Up</h3>
+							<p style="color:green;"><?php echo $success; ?></p>
+							<p style="color:red;"><?php echo $message; ?></p>
 							<label class="space">First Name:</label>
 							<input type="text" name="firstname" required>
 							<label class="space">Last name:</label>
@@ -105,7 +108,6 @@
 							<input type="text" name="address" required>
 							<label class="space">Email:</label>
 							<input type="text" name="email" required>
-							<p style="color:red;"><?php echo $message; ?></p>
 							<label class="space">Username:</label>
 							<input type="text" name="username" required>
 							<label class="space">Password:</label>
@@ -125,3 +127,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
+<?php 
+  
+    // 5. Close database connection
+    mysqli_close($connection);
+?>
