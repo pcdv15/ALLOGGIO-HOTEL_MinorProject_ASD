@@ -72,7 +72,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
-			<div class="cont">
+			<div>
 				<div class="twelve columns">
 				<a class="button margin_button" href="index.php">Alloggio</a>
 				<a class="button" href="#">About</a>

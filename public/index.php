@@ -33,26 +33,17 @@
 	<?php 
 		include('../include/conn.php');
 		session_start();
-
-		//$user_check = $_SESSION['logined_user']; //check if user is logined
-		
-		//$ses_sql = mysqli_query($connection, "SELECT username from login where username = '$user_check' ");
-		
-		//$result = mysqli_fetch_assoc($ses_sql);
-		
-		//$login_session = $result['username'];
-
 		if(isset($_SESSION['logined_user'])) {
-			require("../include/header2.html");
+			include("../include/header2.html");
 		} else {
-			require("../include/header1.html");
+			include("../include/header1.html");
 		}
-	//require("../include/header1.html");
 	
 	?>
-		<div class="logo_home">
-				<img src="images/Alloggio_logo.png">
-		</div>
+		    <div>
+        		<img style="display: block;
+    margin: 0 auto;" src="images/Alloggio_logo.png">
+			</div>
 		<div class="slide_show">
 		</div>
 		<div class="rooms_info">
