@@ -5,8 +5,19 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['roomnum'] = $_POST['roomnum'];
+        $_SESSION['roomtype'] = $_POST['roomtype'];
         $_SESSION['checkin_date'] = $_POST["checkin"];
         $_SESSION['checkout_date'] = $_POST["checkout"];
+
+        if($_POST['roomtype'] == "SUITE") {
+            $_SESSION['rate'] = 5000;
+        }
+        elseif($_POST['roomtype'] == "DELUXE") {
+            $_SESSION['rate'] = 3000;
+        }
+        elseif($_POST['roomtype'] == "STANDARD") {
+            $_SESSION['rate'] = 1000;
+        }
 
         $date1 = date_create($_POST["checkin"]);
         $date2 = date_create($_POST["checkout"]);
@@ -33,7 +44,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>Book</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -74,7 +85,7 @@
 <select name="roomtype" required>
     
     <option value="">--- Select Room Type ---</option>
-  <option value="VIP">Suite</option>
+  <option value="SUITE">Suite</option>
   <option value="DELUXE">Deluxe</option>
   <option value="STANDARD">Standard</option>
 </select>

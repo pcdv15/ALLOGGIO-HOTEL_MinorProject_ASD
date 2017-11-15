@@ -8,7 +8,7 @@
 
     $json = [];
     while($row = mysqli_fetch_assoc($result)) {
-        $json[$row['id']] = $row['room_num'];
+        $json[$row['room_num']] = $row['room_num'];
     }
 
     echo json_encode($json);

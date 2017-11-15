@@ -36,7 +36,7 @@
 				$error2 = "Username already taken!";
 			}
 		}
-		else if(mysqli_num_rows($result1) == 1) {
+		elseif(mysqli_num_rows($result1) == 1) {
 			$error2 = "Username already taken!";
 		} else {
 			$query_2 = mysqli_query($connection, "INSERT INTO userinfo (firstname, lastname, address, email, dateofbirth, create_date) VALUES ('$firstname', '$lastname', '$address', '$email', '$dateofbirth', CURRENT_TIMESTAMP)");
