@@ -39,7 +39,7 @@
 <html lang="en">
 <head>
   <?php
-    //echo ;
+
     $message = $error; 
   ?>
   <!-- Basic Page Needs
@@ -66,36 +66,41 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/Alloggio_icon.png">
 
+ 
 </head>
+
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="container">
-			<div>
-				<div class="twelve columns">
-				<a class="button margin_button" href="index.php">Alloggio</a>
-				<a class="button" href="#">About</a>
-				<a class="button" href="#">Contact</a>
+			
+				<div class="twelve columns menu_bar">
+				<a class="button margin_button button-primary" href="index.php">Alloggio</a>
+				<a class="button margin_button button-primary" href="#">About</a>
+				<a class="button margin_button button-primary" href="#">Contact</a>
 				</div>
-			</div>
+		
 				<div class="twelve columns reg_form">
 					<form action="" method="post">
               <p><img src="images/Alloggio_logo.png"></p>
               <p style="color:red;"><?php echo $message; ?></p>
 							<h3>Sign In</h3>
 							<p>Username:</p>
-							<input type="text" name="username" required>
+							<input type="text" name="username" pattern="^[A-Za-z0-9_]{1,15}$" autofocus required title="Should only contain alphanumeric characters and an underscore">
 							<p>Password:</p>
 							<input type="password" name="password" required>
 							<br /><br />
-							<input type="submit" value="submit" name="submit">
+              <input type="submit" value="submit" name="submit">
+              
           </form>
-				</div>
+        </div>
+        
 	</div>
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+
 </html>
 <?php 
 

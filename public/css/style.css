@@ -2,12 +2,21 @@
 	font-family:raleway;
 	src: url('../font/raleway.woff2') format('woff2');
 }
+/*
+body {
+	background-image: url("../images/bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 100%;
+}*/
 .twelve.columns{ 
-	border:3px solid rgb(239,228,176);
+	border:3px solid #FFE57F;
+	border-radius:5px;
 }
 
 .menu_bar{
-	background-color:rgb(239,228,176);
+	background-color:#FFE57F;
 }
 
 .button{
@@ -32,14 +41,12 @@
 	margin-left:70%;
 }
 
-
-
 .reg_form{
 	margin-left:10px;
 	margin-top:3%;
 	width:200%;
 	text-align:center;
-	border:2px solid rgb(239,228,176);
+	border:2px solid #FFE57F;
 }
 
 .dob{

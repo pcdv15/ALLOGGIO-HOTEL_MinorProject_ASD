@@ -142,7 +142,6 @@
         
         ?>
 		<div class="twelve columns reg_form">	
-            <p><img src="images/Alloggio_logo.png"></p>
             <h3>Rooms</h3>
             <p>Legend: <br>
                 <span style="color:#32cd32;">Green</span>: Available <br>

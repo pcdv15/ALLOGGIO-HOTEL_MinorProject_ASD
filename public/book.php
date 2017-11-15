@@ -1,5 +1,30 @@
 <?php
     include('../include/session.php');
+
+    $errmessage = "";
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['roomnum'] = $_POST['roomnum'];
+        $_SESSION['checkin_date'] = $_POST["checkin"];
+        $_SESSION['checkout_date'] = $_POST["checkout"];
+
+        $date1 = date_create($_POST["checkin"]);
+        $date2 = date_create($_POST["checkout"]);
+        
+        //difference between two dates
+        $diff = date_diff($date1,$date2);
+        $diff = $diff->format("%a");
+
+        $_SESSION['totalnights'] = $diff;
+
+        if($diff == '0') {
+            $errmessage = "Check out date must not be the same with check in";
+        } else {
+            header("Location: confirm.php");
+        }
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,40 +55,30 @@
     <script src="js/jquery.min.js"></script>
 
 </head>
-<body>
-
+<body class="container">
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<div class="container">
 	<?php 
-
-
-	//$user_check = $_SESSION['logined_user']; //check if user is logined
-	
-	//$ses_sql = mysqli_query($connection, "SELECT username from login where username = '$user_check' ");
-	
-	//$result = mysqli_fetch_assoc($ses_sql);
-	
-	//$login_session = $result['username'];
-
 	if(isset($_SESSION['logined_user'])) {
 		require("../include/header2.html");
 	} else {
 		require("../include/header1.html");
-	}
-//require("../include/header1.html");
+    }
+    ?>
+    
+<div class=" twelve columns reg_form">
+<form  action="" method="post">
 
-?>
-<form method="post" action="">
-<p>
-    <h5>Room Type</h5>
+    <h5>Room Type </h5>
+    <p style="color:red;"><?php echo $errmessage; ?></p>
 <select name="roomtype" required>
+    
     <option value="">--- Select Room Type ---</option>
   <option value="VIP">Suite</option>
   <option value="DELUXE">Deluxe</option>
   <option value="STANDARD">Standard</option>
 </select>
-</p>
+
 
 <p>
     <h5>Room Number</h5>
@@ -72,20 +87,17 @@
 </select>
 </p>
 
-<div class=" u-cf">
-    <label>Check In</label>
-	<input type="text" placeholder="MM" name="checkin_month" class="checkin" required>
-	<input type="text" placeholder="DD" name="checkin_day" class="checkin" required>
-	<input type="text" placeholder="YYYY" name="checkin_year" class="checkin year" required> 
-	<label>Check Out</label>
-	<input type="text" placeholder="MM" name="checkout_month" class="checkin" required>
-	<input type="text" placeholder="DD" name="checkout_day" class="checkin" required>
-	<input type="text" placeholder="YYYY" name="checkout_year" class="checkin year" required>
-</div>
-<br>
-
-<input type="submit" name="submit" value="Next"/>
+<p>
+    <h5>Check In</h5>
+    <input type="date"  name="checkin" value="<?php if(isset($_SESSION['checkin_date'])){ echo $_SESSION['checkin_date'];} else {echo date("Y-m-d");}?>" min="<?php echo date("Y-m-d"); ?>" required>
+</p>
+<p>    <h5>Check Out</h5>
+    
+	<input type="date"  name="checkout" min="<?php $date = date("Y-m-d"); $date = strtotime("$date + 1 day"); $date = date("Y-m-d", $date); echo $date;?>" value="<?php if(isset($_SESSION['checkout_date'])){ echo $_SESSION['checkout_date'];} else {echo $date;}  ?>"  required></p>
+    
+<input  type="submit" name="submit" value="Next"/>
 </form>
+</div>
 
 <script>
     $( "select[name='roomtype']" ).change(function () {
@@ -108,5 +120,6 @@
         }
     });
 </script>
+
 </body>
 </html>
