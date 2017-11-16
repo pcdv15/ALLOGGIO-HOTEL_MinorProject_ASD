@@ -29,6 +29,10 @@ Configuration Analysis
 - WAMP server installed
 - Basic installation knowledge
 
+-----
+How to install Alloggio Hotel Online Reservation 2017:
+
+Note: For the software to be working properly, you should install WampServer. You can download the latest version in here: http://www.wampserver.com/en/#download-wrapper
 
 
 
