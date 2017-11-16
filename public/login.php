@@ -21,10 +21,14 @@
       
       $count = mysqli_num_rows($result); //query above must result 1 row
 
+      
+
       if($count == 1) {
         if(password_verify($mypassword, $hashed_password)) { //Verify password if it's equal to the hashed password in db
           $_SESSION['logined_user'] = $myusername;
+          $_SESSION['uid'] = $login['uid'];
           header("Location: dashboard.php");
+          
         } else {
           $error = "Your login credentials are invalid";
         }

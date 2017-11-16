@@ -42,7 +42,7 @@
             require("../include/header1.html");
         }
 
-        $query_1 = "SELECT * FROM rooms";
+        $query_1 = "SELECT * FROM rooms order by id asc";
         $result_1 = mysqli_query($connection, $query_1);
         $i = 0;
         while($rooms = mysqli_fetch_assoc($result_1)) { //store query to $rooms
