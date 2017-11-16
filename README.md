@@ -44,7 +44,7 @@ Note: For the software to be working properly, you should install WampServer. Yo
 
 05. The Installation Complete screen will now appear. Check the Launch WampServer Now box, then click Finish to complete the installation.
 
-
+Now that you finish the first step. Let's proceed to the next step where you should install the online reservation software.
 
 
 
