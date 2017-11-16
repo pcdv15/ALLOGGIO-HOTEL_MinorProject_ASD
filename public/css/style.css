@@ -4,19 +4,22 @@
 }
 
 body {
-	background-image: url("../images/bg1.png");
+	background-image: url("../images/bg2.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	background-size: 100%;
+	background-size: cover;
+	overflow-y: scroll;
+	
 }
 .twelve.columns{ 
-	border:3px solid #FFE57F;
+	border:3px solid #fdcd47;
 	border-radius:5px;
 }
 
 .menu_bar{
-	background-color:#FFE57F;
+	background-color:#fdcd47;
+	padding-right:1%;
 }
 
 .button{
@@ -44,11 +47,12 @@ body {
 
 .reg_form{
 	margin-left:10px;
-	margin-top:3%;
+	margin-top:2%;
 	width:200%;
 	text-align:center;
 	border:2px solid #FFE57F;
 }
+
 
 .dob{
 	width:9%;
@@ -107,17 +111,17 @@ margin-left:7%;
 
 .more_image2{
 	margin-left:170%;
-	margin-top:-430px;
+	margin-top:-320px;
 }
 
 .more_image3{
 	margin-left:170%;
-	margin-top:-420px;
+	margin-top:-370px;
 }
 
 .more_image4{
 	margin-left:170%;
-	margin-top:-470px;
+	margin-top:-430px;
 }
 
 .next_button{
@@ -138,16 +142,32 @@ margin-left:7%;
 
 #standard{
 	position:absolute;
+	background-color:rgba(0, 105, 92, 0.45);
+	margin-top:10%;
+	width:100%;
+	height:80%;
+	border-radius: 5px;
 }
 
 #deluxe{
 	position:absolute;
 	top:190%;
+	background-color:rgba(0, 105, 92, 0.45);
+	margin-top:10%;
+	width:100%;
+	border-radius: 5px;
+	height:80%;
 }
 
 #suite{
 	position:absolute;
 	top:280%;
+	background-color:rgba(0, 105, 92, 0.45);
+	margin-top:10%;
+	margin-top:10%;
+	width:100%;
+	height:80%;
+	border-radius: 5px;
 }
 .sdr{
 	position:abosulte;
@@ -163,4 +183,32 @@ margin-left:7%;
 	position:absolute;
 	left:74%;
 	margin-top:-49px;
+}
+
+.inclusions, .ammenities{
+	margin-left:5%;
+
+}
+
+.footer{
+	position:absolute;
+	top:380%;
+	background-color:rgba(101, 240, 129, 0.2);
+	text-align:center;
+	border-radius: 5px;
+}
+
+.w3-animate-fading {
+    animation: fading 8s infinite
+}
+@keyframes fading {
+    0% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
 }

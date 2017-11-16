@@ -77,12 +77,12 @@
     }
     ?>
     
-<div class=" twelve columns reg_form">
+<div class=" twelve columns reg_form container">
 <form  action="" method="post">
 
     <h5>Room Type </h5>
     <p style="color:red;"><?php echo $errmessage; ?></p>
-<select name="roomtype" required>
+<select style="color:black;" name="roomtype" required>
     
     <option value="">--- Select Room Type ---</option>
   <option value="SUITE">Suite</option>
@@ -93,7 +93,7 @@
 
 <p>
     <h5>Room Number</h5>
-<select name="roomnum" required>
+<select style="color:black;" name="roomnum" required>
 
 </select>
 </p>

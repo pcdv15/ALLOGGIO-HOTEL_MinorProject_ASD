@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2017 at 07:06 PM
+-- Generation Time: Nov 16, 2017 at 09:50 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `alloggio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `book_details`
+--
+
+CREATE TABLE `book_details` (
+  `transaction_id` int(99) NOT NULL,
+  `customer` varchar(255) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `accom_type` varchar(15) NOT NULL,
+  `room_num` int(3) NOT NULL,
+  `arrive_depart` varchar(50) NOT NULL,
+  `num_night` int(3) NOT NULL,
+  `total_paid` int(99) NOT NULL,
+  `checkout` tinyint(4) NOT NULL,
+  `booked_date` timestamp NOT NULL,
+  `creditcard_num` int(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -52,27 +72,27 @@ CREATE TABLE `rooms` (
   `room_num` int(3) NOT NULL,
   `type` varchar(15) NOT NULL,
   `available` tinyint(4) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rooms`
 --
 
 INSERT INTO `rooms` (`id`, `room_num`, `type`, `available`) VALUES
-(1, 301, 'VIP', 1),
-(2, 302, 'VIP', 1),
-(3, 303, 'VIP', 1),
-(4, 201, 'DELUXE', 1),
-(5, 202, 'DELUXE', 1),
-(6, 203, 'DELUXE', 1),
-(7, 204, 'DELUXE', 1),
-(8, 205, 'DELUXE', 1),
 (9, 101, 'STANDARD', 1),
 (10, 102, 'STANDARD', 1),
 (11, 103, 'STANDARD', 1),
 (12, 104, 'STANDARD', 1),
 (13, 105, 'STANDARD', 1),
-(14, 106, 'STANDARD', 1);
+(14, 106, 'STANDARD', 1),
+(4, 201, 'DELUXE', 1),
+(5, 202, 'DELUXE', 1),
+(6, 203, 'DELUXE', 1),
+(7, 204, 'DELUXE', 1),
+(8, 205, 'DELUXE', 1),
+(1, 301, 'SUITE', 1),
+(2, 302, 'SUITE', 1),
+(3, 303, 'SUITE', 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +108,7 @@ CREATE TABLE `userinfo` (
   `email` varchar(100) NOT NULL,
   `dateofbirth` date NOT NULL,
   `create_date` timestamp NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `userinfo`
@@ -97,12 +117,17 @@ CREATE TABLE `userinfo` (
 INSERT INTO `userinfo` (`id`, `firstname`, `lastname`, `address`, `email`, `dateofbirth`, `create_date`) VALUES
 (2, 'Paul', 'Villanueva', 'Davao City', 'paulvillanueva2012@gmail.com', '1998-01-15', '2017-11-12 09:26:06'),
 (3, 'Fritz', 'Getigan', 'Samal', 'frtz@gmail.com', '1111-11-11', '2017-11-12 10:04:03'),
-(4, 'Theona', 'Aton', 'Davao', 'aton@mail.com', '1111-11-11', '2017-11-13 01:17:42'),
-(10, 'Barry', 'Allen', 'Central City', 'theflash@gmail.com', '1970-01-01', '2017-11-15 11:04:09');
+(4, 'Theona', 'Aton', 'Davao', 'aton@mail.com', '1111-11-11', '2017-11-13 01:17:42');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `book_details`
+--
+ALTER TABLE `book_details`
+  ADD PRIMARY KEY (`transaction_id`);
 
 --
 -- Indexes for table `login`
@@ -114,7 +139,7 @@ ALTER TABLE `login`
 -- Indexes for table `rooms`
 --
 ALTER TABLE `rooms`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`room_num`);
 
 --
 -- Indexes for table `userinfo`
@@ -127,10 +152,25 @@ ALTER TABLE `userinfo`
 --
 
 --
+-- AUTO_INCREMENT for table `book_details`
+--
+ALTER TABLE `book_details`
+  MODIFY `transaction_id` int(99) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `login`
+--
+ALTER TABLE `login`
+  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `userinfo` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -35,7 +35,8 @@
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
-  background-color: white;
+  background-color:rgba(0, 105, 92, 0.45);
+  border-radius: 5px;
 }
 .column,
 .columns {
@@ -127,7 +128,10 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; }
+  color: rgb(213, 241, 214);
+  text-shadow: 1px 2px 2px rgb(0, 0, 0); 
+}
+  
 
 
 /* Typography
@@ -160,7 +164,7 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: rgb(255, 255, 255); }
 a:hover {
   color: #0FA0CE; }
 
@@ -175,7 +179,7 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: #555;
+  color: rgb(255, 255, 255);
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -199,8 +203,8 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
-  border-color: #888;
+  color: rgb(216, 228, 48);
+  border-color: rgb(100, 180, 154);
   outline: 0; }
 .button.button-primary,
 button.button-primary,
@@ -208,8 +212,11 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  background-color: #00E676;
+  border-color: #00E676;
+  border-style: 7px solid black;
+  box-shadow: 1px 1px 2px rgb(4, 150, 4);
+  }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -221,8 +228,9 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB; }
+  
+  background-color:  #69F0AE;
+  border-color: #69F0AE; }
 
 
 /* Forms
@@ -239,6 +247,7 @@ textarea,
 select {
   height: 38px;
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  color:black;
   background-color: #fff;
   border: 1px solid #D1D1D1;
   border-radius: 4px;
@@ -260,7 +269,8 @@ textarea {
 textarea {
   min-height: 65px;
   padding-top: 6px;
-  padding-bottom: 6px; }
+  padding-bottom: 6px;
+ }
 input[type="email"]:focus,
 input[type="number"]:focus,
 input[type="search"]:focus,
@@ -271,6 +281,7 @@ input[type="password"]:focus,
 input[type="date"]:focus,
 textarea:focus,
 select:focus {
+  color:black;
   border: 1px solid #33C3F0;
   outline: 0; }
 label,

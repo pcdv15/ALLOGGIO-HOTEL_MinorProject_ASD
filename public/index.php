@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 
+
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/Alloggio_icon.png">
@@ -41,26 +42,80 @@
 	
 	?>
 		    <div>
-        		<img style="display: block;
-    margin: 0 auto;" src="images/Alloggio_logo.png">
+        		<img style="display: block; margin: 0 auto;z-index: 1; width: 28%; height: 28%;" src="images/Alloggio_logo.png">
 			</div>
-		<div class="slide_show">
-		</div>
 		<div class="rooms_info">
-			<img src="images/design.jpg" width="700" class="img_center">
-			<h3>Our Rooms</h3>
-			<a href="#standard"><img src="images/standard.jpg" width="200" height="150" class="room1 standard"></a>
-			<a href="#deluxe"><img src="images/deluxe.jpg" width="200" height="150" class="rooms deluxe"></a>
-			<a href="#suite"><img src="images/suite.jpg" width="200" height="150" class="suite"></a>
-			<label class="room_label">
-				<p class="sdr">Standard Rooms</p>
-				<p class="dr">Deluxe Rooms</p>
-				<p class="sr">Suite Rooms</p>
-			</label>
-			<img src="images/design2.jpg" width="700" class="img_center">
+		<h3>Our Rooms</h3>
+			<img src="images/design.png" width="700" class="img_center">
+	
+	<script type="text/javascript"> 
+		var i = 0; 
+		var image = new Array();   
+		// LIST OF IMAGES 
+		image[0] = "images/standard.jpg"; 
+		image[1] = "images/deluxe.jpg"; 
+		image[2] = "images/suite.jpg";   
+		var k = image.length-1;    
+
+		var caption = new Array(); 
+		// LIST OF CAPTIONS 
+		caption[0] = "Standard"; 
+		caption[1] = "Deluxe"; 
+		caption[2] = "Suite"; 
+
+		var link= new Array();   
+		// LIST OF LINKS 
+		link[0] = "#standard"; 
+		link[1] = "#deluxe"; 
+		link[2] = "#suite";   
+    
+
+		function swapImage(){ 
+			var el = document.getElementById("mydiv"); 
+			el.innerHTML=caption[i]; 
+			var img = document.getElementById("slide"); 
+			img.src= image[i]; 
+			var a = document.getElementById("link"); 
+			a.href= link[i]; 
+
+			if(i < k ) { i++;}  
+			else  { i = 0; } 
+			setTimeout("swapImage()",8000); 
+		} 
+		function addLoadEvent(func) { 
+			var oldonload = window.onload; 
+			if (typeof window.onload != 'function') { 
+				window.onload = func; 
+			} else  { 
+			window.onload = function() { 
+			if (oldonload) { 
+			oldonload(); 
+		} 
+		func(); 
+		} 
+		} 
+		} 
+		addLoadEvent(function() { 
+		swapImage(); 
+		});  
+</script> 
+<table style="border:none;background-color:transparent; margin:auto;"> 
+	<tr> 
+		<td>
+		<a name="link" id="link" target=""><img class="w3-animate-fading" name="slide" id="slide" style="border: 2px ridge #FFE57F; border-radius: 5px; margin:auto" width="250" height="200"  src="image-1.png"/></a>
+		
+		</td> 
+	</tr> 
+	<tr> 
+		<td align="center" class="w3-animate-fading" style="text-align:center; color:white;"> 
+		<a name="link" style="text-align:center; color:white;" id="link" target=""><div id="mydiv"></div></a>
+		</td> 
+	</tr>  
+</table>
+
+			<img src="images/design2.png" width="700" class="img_center">
 		</div> <!-- end of rooms_info div -->
 		<div id="standard">
-			<hr>
 			<div class="four columns"> 
 				<div class="more_info">
 				<h3 class="space">PACKAGE</h3>
@@ -85,7 +140,6 @@
 			</div> <!-- end of four columns div -->
 		</div> <!-- end of standard div -->
 		<div id="deluxe">
-			<hr>
 			<div class="four columns">
 				<div class="more_info">
 				<h3 class="space">PACKAGE</h3>
@@ -111,7 +165,6 @@
 			</div> <!-- end of four columns div -->
 		</div> <!-- end of deluxe div -->
 			<div id="suite">
-			<hr>
 			<div class="four columns">
 				<div class="more_info">
 				<h3 class="space">PACKAGE</h3>
@@ -136,7 +189,11 @@
 				</div> <!-- end of more_info div -->
 			</div> <!-- end of four columns div -->
 		</div> <!-- end of deluxe div -->
+		<?php
+		include('../include/footer.html');
+	?>
 	</div> <!-- end of container div -->
+
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>

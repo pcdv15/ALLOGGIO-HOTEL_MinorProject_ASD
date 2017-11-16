@@ -83,7 +83,7 @@
 		
 				<div class="twelve columns reg_form">
 					<form action="" method="post">
-              <p><img src="images/Alloggio_logo.png"></p>
+              <p><img style="display: block; margin: 0 auto;z-index: 1; width: 28%; height: 28%;" src="images/Alloggio_logo.png"></p>
               <p style="color:red;"><?php echo $message; ?></p>
 							<h3>Sign In</h3>
 							<p>Username:</p>
