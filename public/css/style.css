@@ -2,14 +2,14 @@
 	font-family:raleway;
 	src: url('../font/raleway.woff2') format('woff2');
 }
-/*
+
 body {
-	background-image: url("../images/bg.jpg");
+	background-image: url("../images/bg1.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: 100%;
-}*/
+}
 .twelve.columns{ 
 	border:3px solid #FFE57F;
 	border-radius:5px;
@@ -25,6 +25,7 @@ body {
 
 .cont{
 	margin-top:5%;
+	background-color: white;
 }
 
 .margin_button{
