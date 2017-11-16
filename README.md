@@ -15,10 +15,19 @@ Group Members
 + Fritz Xhyro Getigan
 
 -----
-Functions
+Content Analysis
 - update reservation
 - make new reservation
 - input personal info
+- manage user accounts
+- confirm reserve order
+
+-----
+Configuration Analysis
+- Windows 7 or later operating system
+- Google Chrome required internet browser
+- WAMP server installed
+- Basic installation knowledge
 
 
 
