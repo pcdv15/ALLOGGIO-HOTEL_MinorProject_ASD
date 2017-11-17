@@ -53,7 +53,8 @@
 
 ?>
 
-<a href="book.php"><button  class="margin_button">Reserve Room</button></a>
+<a href="book.php"><button  class="margin_button">Reserve Room</button></a> <br>
+<a href="reservations.php"><button  class="margin_button">View Reservations</button></a>
 
 </body>
 </html>

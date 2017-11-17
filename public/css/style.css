@@ -212,3 +212,36 @@ margin-left:7%;
         opacity: 0
     }
 }
+
+table {
+	margin: auto;
+
+}
+
+table td {
+	transition: all .5s;
+}
+
+.data-table {
+	border-collapse: collapse;
+	margin-bottom: 2em;
+
+}
+
+.data-table th,
+.data-table td {
+	border: 1px solid #e1edff;
+	padding: 6px 15px;
+}
+
+.data-table thead th {
+	background-color: rgba(177, 172, 37, 0.541);	
+}
+
+.data-table tbody tr:nth-child(odd) td {
+	background-color: rgba(99, 134, 117, 0.815);
+}
+
+.data-table tbody tr:nth-child(even) td {
+	background-color: rgba(44, 40, 40, 0.63);
+}
