@@ -5,26 +5,37 @@
     $success_message = "";
 
     $uid = $_SESSION['uid'];
-    $sql = "SELECT firstname,lastname, address, email, dateofbirth FROM userinfo WHERE id = $uid";
+    $sql = "SELECT * FROM userinfo WHERE id = $uid";
     $query = mysqli_query($connection, $sql);
 
     $row = mysqli_fetch_assoc($query);
 
-    $fullname = $row['firstname']." ".$row['lastname'];
-    $address = $row['address'];
-    $email = $row['email'];
-    $dob = $row['dateofbirth'];
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $deletelogindetails =  mysqli_query($connection, "DELETE FROM login WHERE uid = $uid");
+
+        if($deletelogindetails) {
+            $deleteuserdata = mysqli_query($connection, "DELETE FROM userinfo WHERE id = $uid");
+
+            if($deleteuserdata) {
+                header("Location: logout.php");
+            }
+        }
+
+    }
     
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php 
+  $success = $success_message;
+?>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Profile</title>
+  <title>Delete Account</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -57,18 +68,16 @@
     }
     ?>
 
-    <div class="twelve columns space container u-cf" style="padding-left:1em;padding-right:1em;padding-top:1em;">
-    <div class="u-pull-right" style="border:3px solid #fdcd47;border-radius:5px;padding:1em;margin-top: 4em;">
-        <a href="emailchange.php"><button  class="margin_button">Edit Email</button></a> <br>
-        <a href="changepass.php"><button  class="margin_button">Edit Password</button></a> <br>
-        <a href="deleteaccount.php"><button  class="margin_button">Delete Account</button></a> <br>
-        </div>
-        <h4>Profile</h4>
-        <label for="">Name: &nbsp;<?php echo $fullname; ?></label> <br>
-        <label for="">Address: &nbsp;<?php echo $address; ?></label> <br>
-        <label for="">Email: &nbsp;<?php echo $email; ?></label> <br>
-        <label for="">Date of Birth: &nbsp;<?php echo $dob; ?></label> <br>
-
+    <div class="twelve columns space container u-cf reg_form" style="padding-left:1em;padding-right:1em;padding-top:1em;">
+    <a class="u-pull-right" href="profile.php"><button  class="margin_button">Go Back</button></a>
+        <form action="" method="post">
+        <br><br><br>
+            <h3>Are you sure?</h3>
+            <input class="space" type="submit" name="submit" value="YES"> 
+        </form>
+        <a class="" href="profile.php"><button  class="">NO</button></a> <br>
+        <p class="space"></p>
+        
 
                     
     </div>
