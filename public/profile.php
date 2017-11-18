@@ -1,5 +1,21 @@
 <?php
     include('../include/session.php');
+    require_once("../include/conn.php");
+    $error = "";
+    $success_message = "";
+
+    $uid = $_SESSION['uid'];
+    $sql = "SELECT firstname,lastname, address, email, dateofbirth FROM userinfo WHERE id = $uid";
+    $query = mysqli_query($connection, $sql);
+
+    $row = mysqli_fetch_assoc($query);
+
+    $fullname = $row['firstname']." ".$row['lastname'];
+    $address = $row['address'];
+    $email = $row['email'];
+    $dob = $row['dateofbirth'];
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +24,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>Profile</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -26,38 +42,35 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/Alloggio_icon.png">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.min.js"></script>
 
 </head>
-<body>
-
+<body class="container">
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<div class="container">
 	<?php 
-
-
-	//$user_check = $_SESSION['logined_user']; //check if user is logined
-	
-	//$ses_sql = mysqli_query($connection, "SELECT username from login where username = '$user_check' ");
-	
-	//$result = mysqli_fetch_assoc($ses_sql);
-	
-	//$login_session = $result['username'];
-
 	if(isset($_SESSION['logined_user'])) {
 		require("../include/header2.html");
 	} else {
 		require("../include/header1.html");
-	}
-//require("../include/header1.html");
+    }
+    ?>
+    
+    <div class="twelve columns space container" style="padding-left:1em;padding-right:1em;padding-top:1em;">
+        <h4>Profile</h4>
+        <label for="">Name: &nbsp;<?php echo $fullname; ?></label> <br>
+        <label for="">Address: &nbsp;<?php echo $address; ?></label> <br>
+        <label for="">Email: &nbsp;<?php echo $email; ?></label> <br>
+        <label for="">Date of Birth: &nbsp;<?php echo $dob; ?></label> <br>
 
-?>
+        
+                    
+    </div>
 
-<div>
-<a href="book.php"><button  class="margin_button">Reserve Room</button></a> <br>
-<a href="reservations.php"><button  class="margin_button">View Reservations</button></a> <br>
-<a href="profile.php"><button  class="margin_button">View Profile</button></a>
-</div>
 
 </body>
 </html>
+<?php 
+    mysqli_close($connection);
+?>
