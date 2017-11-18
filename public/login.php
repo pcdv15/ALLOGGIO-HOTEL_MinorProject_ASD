@@ -81,8 +81,7 @@
 			
 				<div class="twelve columns menu_bar">
 				<a class="button margin_button button-primary" href="index.php">Alloggio</a>
-				<a class="button margin_button button-primary" href="#">About</a>
-				<a class="button margin_button button-primary" href="#">Contact</a>
+				<a class="button margin_button button-primary" href="about.php">About Us</a>
 				</div>
 		
 				<div class="twelve columns reg_form">

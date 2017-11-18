@@ -99,7 +99,7 @@
 			<div>
 				<div class="twelve columns menu_bar">
 				<a class="button button-primary margin_button" href="index.php">Alloggio</a>
-				<a class="button button-primary margin_button" href="#">Contact</a>
+				<a class="button button-primary margin_button" href="about.php">About Us</a>
 				</div>
 			</div>
 
