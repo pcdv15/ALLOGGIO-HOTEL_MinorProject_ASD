@@ -42,7 +42,8 @@
 	
 	?>
 		   <div class="about_us">
-				lorem ipsum dolor sit amet 
+			The Alloggio hotel offers a new experience in hospitality.
+			Alloggio is the Italian word for "accommodation", a perfect place for stay with a local vibe to create an inviting place where relaxation, play, and work can mix. 
 				</div>
 				<div class="first_icons">
 				<a href="#"><img src="images/facebook.png" width="7%" height="7%"></a>
