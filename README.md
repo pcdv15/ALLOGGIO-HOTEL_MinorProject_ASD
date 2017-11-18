@@ -42,7 +42,7 @@ Note: For the software to be working properly, you should install WampServer. Yo
 
 ![](https://i.imgur.com/smeFHZO.png "")
 
-03. Once the files are extracted, you will be asked to select a default browser. Just Open the .exe of the browser of your choice. There will be another window that would pop up, just click Allow Access in order to finish the Installation process.
+03. Once the files are extracted, you will be asked to select a default browser. Use Google Chrome as the default browser. There will be another window that would pop up, just click Allow Access in order to finish the Installation process.
 
 ![](https://i.imgur.com/UYpVoK3.png "")
 
@@ -60,7 +60,7 @@ Now that you finish the first step. Let's proceed to the next step where you sho
 
 ![](https://i.imgur.com/kPXA5Bl.png "")
 
-02. Click enter in console and type the following GRANT ALL PRIVILEGES ON *.* TO 'alloggio'@'localhost' IDENTIFIED BY '123456';.
+02. Click enter in console and type the following GRANT ALL PRIVILEGES ON *.* TO 'alloggio'@'localhost' IDENTIFIED BY '123456';. Then click Enter.
 
 ![](https://i.imgur.com/DhVmEpr.png "")
 
