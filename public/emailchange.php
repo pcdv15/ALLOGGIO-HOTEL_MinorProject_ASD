@@ -5,26 +5,33 @@
     $success_message = "";
 
     $uid = $_SESSION['uid'];
-    $sql = "SELECT firstname,lastname, address, email, dateofbirth FROM userinfo WHERE id = $uid";
+    $sql = "SELECT * FROM userinfo WHERE id = $uid";
     $query = mysqli_query($connection, $sql);
 
     $row = mysqli_fetch_assoc($query);
 
-    $fullname = $row['firstname']." ".$row['lastname'];
-    $address = $row['address'];
-    $email = $row['email'];
-    $dob = $row['dateofbirth'];
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        $newemail = $_POST["newemail"];
+        $updateemail = mysqli_query($connection, "UPDATE userinfo SET email='$newemail' WHERE id = $uid");
+
+        if($updateemail) {
+            $success_message = "Email change successful!";
+        }
+    }
     
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php 
+  $success = $success_message;
+?>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Profile</title>
+  <title>Change Email</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -57,18 +64,16 @@
     }
     ?>
 
-    <div class="twelve columns space container u-cf" style="padding-left:1em;padding-right:1em;padding-top:1em;">
-    <div class="u-pull-right" style="border:3px solid #fdcd47;border-radius:5px;padding:1em;margin-top: 4em;">
-        <a href="emailchange.php"><button  class="margin_button">Edit Email</button></a> <br>
-        <a href="changepass.php"><button  class="margin_button">Edit Password</button></a> <br>
-        <a href="#"><button  class="margin_button">Delete Account</button></a> <br>
-        </div>
-        <h4>Profile</h4>
-        <label for="">Name: &nbsp;<?php echo $fullname; ?></label> <br>
-        <label for="">Address: &nbsp;<?php echo $address; ?></label> <br>
-        <label for="">Email: &nbsp;<?php echo $email; ?></label> <br>
-        <label for="">Date of Birth: &nbsp;<?php echo $dob; ?></label> <br>
-
+    <div class="twelve columns space container u-cf reg_form" style="padding-left:1em;padding-right:1em;padding-top:1em;">
+    <a class="u-pull-right" href="profile.php"><button  class="margin_button">Go Back</button></a>
+            <form action="" method="post">
+            <br><br><br>
+            <h3 class=>Change Email</h3>
+            <p style="color:green;"><?php echo $success; ?></p>
+            <p class="space">New Email:</p>
+            <input type="email" name="newemail" required>
+            <input type="submit" name="submit" value="Submit">
+        </form>
 
                     
     </div>
