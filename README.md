@@ -56,5 +56,56 @@ Note: For the software to be working properly, you should install WampServer. Yo
 
 Now that you finish the first step. Let's proceed to the next step where you should install the online reservation software.
 
+01. Left click the WAMP icon on the system tray and click MySql > MySql Console.
+
+![](https://i.imgur.com/kPXA5Bl.png "")
+
+02. Click enter in console and type the following GRANT ALL PRIVILEGES ON *.* TO 'alloggio'@'localhost' IDENTIFIED BY '123456';.
+
+![](https://i.imgur.com/DhVmEpr.png "")
+
+03. Download this repository.
+
+![](https://i.imgur.com/N8aXfXx.png "")
+
+04. Unzip the downloaded repository in any folder. In this case, we extracted the ZIP file in Desktop.
+
+![](https://i.imgur.com/DOrWJHZ.png "")
+
+05. Copy and paste the extracted folder to the wwwdirectory of the WAMP.
+
+![](https://i.imgur.com/bvv9HLT.png "")
+
+06. Go to Google Chrome browser and type localhost in the url bar and click enter.
+
+![](https://i.imgur.com/MlXQMHg.png "")
+
+07. Under Tools, click phpmyadmin and log-in to the phpmyadmin with username: alloggio and password: 123456.
+
+![](https://i.imgur.com/8QXWaGq.png "")
+
+08. In the homepage of phpmyadmin, create new database named alloggio.
+
+![](https://i.imgur.com/6XnJz1h.png "")
+
+09. In allogio database, import the sql file found in the sql folder on the extracted folder and click Go.
+
+![](https://i.imgur.com/znzD73Y.png "")
+
+10. In the Google Chrome, type the following in the url bar: http://localhost/alloggio-hotel_minorproject_asd-master/
+
+![](https://i.imgur.com/j5LCstB.png "")
+
+11. In this file directory, click public and the web app should be working.
+
+![](https://i.imgur.com/3pqIuG1.png "")
+
+
+
+
+
+
+
+
 
 
