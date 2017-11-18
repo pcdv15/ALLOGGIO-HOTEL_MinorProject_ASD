@@ -245,3 +245,22 @@ table td {
 .data-table tbody tr:nth-child(even) td {
 	background-color: rgba(44, 40, 40, 0.63);
 }
+
+.first_icons{
+	padding-top:15%;
+	padding-left:30%;
+}
+
+.second_icons{
+	padding-top:6%;
+	padding-left:40%;
+}
+
+.space2{
+	padding-left:15%;
+}
+
+.about_us{
+	padding-top:15%;
+	padding-left:10%;
+}
