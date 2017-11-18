@@ -8,8 +8,6 @@
     $sql = "SELECT accom_type,room_num,arrive_depart,num_night,total_paid,booked_date,checkout FROM book_details WHERE uid = $uid ORDER BY booked_date ASC";
     $query = mysqli_query($connection, $sql);
 
-    $row = mysqli_fetch_assoc($query);
-
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $rnum = $_POST["roomnum"];
 
