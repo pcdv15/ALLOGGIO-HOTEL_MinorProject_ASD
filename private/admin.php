@@ -1,6 +1,3 @@
-<?php
-    include('../include/session.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +5,7 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>Admin</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -19,38 +16,26 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../public/css/skeleton.css">
+  <link rel="stylesheet" href="../public/css/normalize.css">
+  <link rel="stylesheet" href="../public/css/style.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/Alloggio_icon.png">
+  <link rel="icon" type="image/png" href="../public/images/Alloggio_icon.png">
 
 </head>
 <body>
-
+<h2 style="text-align: center; margin-top:10%;">Admin</h2>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<div class="container">
-	<?php 
+	<div class="container" style="margin-top:5%;">
 
-
-
-	if(isset($_SESSION['logined_user'])) {
-		require("../include/header2.html");
-	} else {
-		require("../include/header1.html");
-	}
-
-
-?>
-
-<div>
-<a href="book.php"><button  class="margin_button">Reserve Room</button></a> <br>
-<a href="reservations.php"><button  class="margin_button">View Reservations</button></a> <br>
-<a href="profile.php"><button  class="margin_button">View Profile</button></a>
+<div class="twelve columns">
+<a href="reservations.php"><button  class="margin_button">View Non-checked Out Reservations</button></a> <br>
+<a href="resetpassword.php"><button  class="margin_button">Reset User Password</button></a> <br>
+<a href="rooms.php"><button  class="margin_button">Roon Availability Checker</button></a> <br>
 </div>
-
+</div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 }
 
 body {
-	background-image: url("../images/bg2.jpg");
+	background-image: url("../images/bg2.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -47,7 +47,6 @@ body {
 
 .reg_form{
 	margin-left:10px;
-	margin-top:2%;
 	width:200%;
 	text-align:center;
 	border:2px solid #FFE57F;
