@@ -247,13 +247,13 @@ table td {
 }
 
 .first_icons{
-	padding-top:15%;
+	padding-top:3%;
 	padding-left:30%;
 }
 
 .second_icons{
-	padding-top:6%;
-	padding-left:40%;
+	padding-top:3%;
+	text-align: center;
 }
 
 .space2{
@@ -261,6 +261,7 @@ table td {
 }
 
 .about_us{
-	padding-top:15%;
+	padding-top:10%;
 	padding-left:10%;
+	padding-right:10%;
 }

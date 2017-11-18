@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2017 at 09:50 PM
+-- Generation Time: Nov 18, 2017 at 08:17 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -34,11 +34,24 @@ CREATE TABLE `book_details` (
   `room_num` int(3) NOT NULL,
   `arrive_depart` varchar(50) NOT NULL,
   `num_night` int(3) NOT NULL,
-  `total_paid` int(99) NOT NULL,
+  `total_paid` bigint(99) NOT NULL,
   `checkout` tinyint(4) NOT NULL,
   `booked_date` timestamp NOT NULL,
-  `creditcard_num` int(12) NOT NULL
+  `creditcard_num` bigint(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `book_details`
+--
+
+INSERT INTO `book_details` (`transaction_id`, `customer`, `uid`, `accom_type`, `room_num`, `arrive_depart`, `num_night`, `total_paid`, `checkout`, `booked_date`, `creditcard_num`) VALUES
+(1, 'Paul Villanueva', 2, 'STANDARD', 101, 'Thu Nov 16th, 2017 - Fri Nov 17th, 2017', 1, 1000, 1, '2017-11-16 14:46:07', 123456123456),
+(2, 'Paul Villanueva', 2, 'SUITE', 301, 'Thu Nov 16th, 2017 - Fri Nov 17th, 2017', 1, 5000, 1, '2017-11-16 14:52:06', 123456123456),
+(3, 'Fritz Getigan', 3, 'DELUXE', 203, 'Thu Nov 16th, 2017 - Mon Nov 20th, 2017', 4, 12000, 1, '2017-11-16 15:03:08', 456456123123),
+(4, 'Paul Villanueva', 2, 'DELUXE', 205, 'Fri Nov 17th, 2017 - Mon Nov 20th, 2017', 3, 9000, 1, '2017-11-17 14:49:42', 123123123123),
+(5, 'Paul Villanueva', 2, 'SUITE', 302, 'Tue Nov 21st, 2017 - Thu Nov 23rd, 2017', 2, 10000, 1, '2017-11-18 00:57:59', 123123123123),
+(6, 'Paul Villanueva', 2, 'STANDARD', 105, 'Sat Nov 18th, 2017 - Thu Nov 30th, 2017', 12, 12000, 0, '2017-11-18 05:51:58', 123123123123),
+(7, 'Theona Aton', 4, 'DELUXE', 201, 'Sat Nov 18th, 2017 - Sun Nov 19th, 2017', 1, 3000, 1, '2017-11-18 06:36:14', 654321654321);
 
 -- --------------------------------------------------------
 
@@ -57,9 +70,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`uid`, `username`, `password`) VALUES
-(2, 'pcdv15', '$2y$10$2tl.Mn.XJtggIpZblBMKJOUtUrIj9yxjQ3leJsAPC099uCr0RfqVO'),
-(3, 'frtz', '$2y$10$pKFCL/D1X9wJdEQHzXh2Z.cyx/Zbdc3cD1S7Ll6xv6f4W28LB/1fy'),
-(4, 'taton', '$2y$10$eJv7Km6EAHbmzgqIPAXdU.6teZx.i.1bUJdO2jnmzl7N97QVeUKFC');
+(2, 'pcdv15', '$2y$10$IJbcLFFj0UmsEfBJ/JI96ecddLtU172t/8hT4P36Z8wynNIDGeySi'),
+(3, 'frtz', '$2y$10$pKFCL/D1X9wJdEQHzXh2Z.cyx/Zbdc3cD1S7Ll6xv6f4W28LB/1fy');
 
 -- --------------------------------------------------------
 
@@ -83,7 +95,7 @@ INSERT INTO `rooms` (`id`, `room_num`, `type`, `available`) VALUES
 (10, 102, 'STANDARD', 1),
 (11, 103, 'STANDARD', 1),
 (12, 104, 'STANDARD', 1),
-(13, 105, 'STANDARD', 1),
+(13, 105, 'STANDARD', 0),
 (14, 106, 'STANDARD', 1),
 (4, 201, 'DELUXE', 1),
 (5, 202, 'DELUXE', 1),
@@ -116,8 +128,7 @@ CREATE TABLE `userinfo` (
 
 INSERT INTO `userinfo` (`id`, `firstname`, `lastname`, `address`, `email`, `dateofbirth`, `create_date`) VALUES
 (2, 'Paul', 'Villanueva', 'Davao City', 'paulvillanueva2012@gmail.com', '1998-01-15', '2017-11-12 09:26:06'),
-(3, 'Fritz', 'Getigan', 'Samal', 'frtz@gmail.com', '1111-11-11', '2017-11-12 10:04:03'),
-(4, 'Theona', 'Aton', 'Davao', 'aton@mail.com', '1111-11-11', '2017-11-13 01:17:42');
+(3, 'Fritz', 'Getigan', 'Samal', 'frtz@gmail.com', '1111-11-11', '2017-11-12 10:04:03');
 
 --
 -- Indexes for dumped tables
@@ -155,12 +166,12 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `book_details`
 --
 ALTER TABLE `book_details`
-  MODIFY `transaction_id` int(99) NOT NULL AUTO_INCREMENT;
+  MODIFY `transaction_id` int(99) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
