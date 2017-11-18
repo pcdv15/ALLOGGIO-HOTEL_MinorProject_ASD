@@ -25,11 +25,15 @@
         //difference between two dates
         $diff = date_diff($date1,$date2);
         $diff = $diff->format("%a");
+        $diff = (int) $diff;
 
         $_SESSION['totalnights'] = $diff;
 
-        if($diff == '0') {
-            $errmessage = "Check out date must not be the same with check in";
+
+
+        if($date1 >= $date2) {
+            $errmessage = "Check in/out date invalid!";
+           
         } else {
             header("Location: confirm.php");
         }
