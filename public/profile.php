@@ -56,15 +56,20 @@
 		require("../include/header1.html");
     }
     ?>
-    
-    <div class="twelve columns space container" style="padding-left:1em;padding-right:1em;padding-top:1em;">
+
+    <div class="twelve columns space container u-cf" style="padding-left:1em;padding-right:1em;padding-top:1em;">
+    <div class="u-pull-right" style="border:3px solid #fdcd47;border-radius:5px;padding:1em;margin-top: 4em;">
+        <a href="#"><button  class="margin_button">Edit Email</button></a> <br>
+        <a href="#"><button  class="margin_button">Edit Password</button></a> <br>
+        <a href="#"><button  class="margin_button">Delete Account</button></a> <br>
+        </div>
         <h4>Profile</h4>
         <label for="">Name: &nbsp;<?php echo $fullname; ?></label> <br>
         <label for="">Address: &nbsp;<?php echo $address; ?></label> <br>
         <label for="">Email: &nbsp;<?php echo $email; ?></label> <br>
         <label for="">Date of Birth: &nbsp;<?php echo $dob; ?></label> <br>
 
-        
+
                     
     </div>
 
